@@ -1,0 +1,11 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    image: carloscontrerasruiz/cms_django_dev:dev
+    ports:
+      - "8585:8000"
+    volumes:
+      - .:/code/
+    env_file:
+     - ./app.env
+    command: python manage.py runserver 0.0.0.0:8000
